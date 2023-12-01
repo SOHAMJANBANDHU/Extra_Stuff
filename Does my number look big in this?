@@ -1,0 +1,23 @@
+public class NumberUtils {
+
+    public static boolean isNarcissistic(int number) {
+        // TODO replace with your code
+      if (number <= 0) {
+            throw new IllegalArgumentException("Input must be a positive non-zero integer");
+        }
+
+        int originalNumber = number;
+        int numDigits = (int) Math.log10(number) + 1;
+        int sum = 0;
+
+        while (number > 0) {
+            int digit = number % 10;
+            sum += Math.pow(digit, numDigits);
+            number /= 10;
+        }
+
+        return sum == originalNumber;
+        //return false;
+    }
+
+}
