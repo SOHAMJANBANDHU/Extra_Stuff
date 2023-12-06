@@ -1,0 +1,16 @@
+public class HumanReadableTime {
+  public static String makeReadable(int seconds) {
+    // Do something
+    if (seconds < 0 || seconds > 359999) {
+            throw new IllegalArgumentException("Invalid input. Seconds should be a non-negative integer not exceeding 359999.");
+        }
+
+        int hours = seconds / 3600;
+        int remainingSeconds = seconds % 3600;
+        int minutes = remainingSeconds / 60;
+        int remainingSecondsFinal = remainingSeconds % 60;
+
+        return String.format("%02d:%02d:%02d", hours, minutes, remainingSecondsFinal);
+        //return Integer.toString(seconds);
+  }
+}
